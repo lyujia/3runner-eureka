@@ -1,0 +1,17 @@
+spring:
+  config:
+    activate:
+      on-profile: prod
+server:
+  port: 8761
+
+
+eureka:
+  instance:
+    hostname: prod
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+    service-url:
+      defaultZone:
+        http://${spring.security.user.name}:${spring.security.user.password}@133.186.143.40:8761/eureka/,http://${spring.security.user.name}:${spring.security.user.password}@133.186.143.40:8762/eureka/
